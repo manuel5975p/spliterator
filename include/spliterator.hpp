@@ -11,7 +11,8 @@ struct spliterator{
         range.first = begin;
         limit_begin = begin;
         limit_end = end;
-        while(begin < limit_end && *(++begin) != sc);
+        if(*begin != sc && begin < limit_end)
+            while(begin < limit_end && *(++begin) != sc);
         range.second = begin;
         splitval = sc;
     }
